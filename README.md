@@ -89,6 +89,17 @@ export function insertSort(arr, field) {
 }
 ```
 
+### 数组柯里化
+```
+export function curry(fn) {
+    let judge = (...args) => {
+        if (args.length == fn.length) return fn(...args)
+        return (...arg) => judge(...args, ...arg)
+    }
+    return judge
+}
+
+```
 
 
 ### GIS 获取两个点之间中间点位
