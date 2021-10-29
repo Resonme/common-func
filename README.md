@@ -1,6 +1,6 @@
 # common-func
 ## 深拷贝
-`
+```
 export function deepCopy(obj) {
   let result
   if (typeof obj === 'object') {
@@ -13,4 +13,4 @@ export function deepCopy(obj) {
   }
   return result
 }
-`
+```
