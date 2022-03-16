@@ -15,6 +15,45 @@ export function deepCopy(obj) {
 }
 ```
 
+### 手写call
+Function.prototype.myCall = function(ctx) {
+  ctx = ctx || window
+  let fn = Symbol()
+  ctx[fn] = this
+  let result = ctx[fn](...arguments)
+  delete ctx[fn]
+  return result
+}
+
+### apply
+Function.prototype.myApply = function(ctx) {
+  ctx = ctx || window
+  let fn = Symbol()
+  ctx[fn] = this
+  let result
+  if (arguments[1]) {
+  result = ctx[fn](...arguments[1])
+  } else {
+  result = ctx[fn]()
+  }
+  delete ctx[fn]
+  return result
+}
+
+### bind 
+Function.prototype.myBind = function (ctx, ...args) {
+  const self = this
+  const fn = function(){}
+  const bind = function(){
+    const _this = this instanceof fn ? this : ctx
+    return self.apply(_this, [...args, ...arguments])
+  }
+  fn.prototype = this.prototype
+  bind.prototype = new fn()
+  return bind
+}
+
+
 ### 防抖
 ```
 export function debounce(fn, wait) {
@@ -68,6 +107,8 @@ export function unique(arr) {
     })
     return res
 }
+
+Array.from(new Set(arr)) // es6
 ```
 
 ### 数组排序 
