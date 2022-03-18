@@ -16,6 +16,7 @@ export function deepCopy(obj) {
 ```
 
 ### 手写call
+```
 Function.prototype.myCall = function(ctx) {
   ctx = ctx || window
   let fn = Symbol()
@@ -24,8 +25,10 @@ Function.prototype.myCall = function(ctx) {
   delete ctx[fn]
   return result
 }
+```
 
 ### apply
+```
 Function.prototype.myApply = function(ctx) {
   ctx = ctx || window
   let fn = Symbol()
@@ -39,8 +42,10 @@ Function.prototype.myApply = function(ctx) {
   delete ctx[fn]
   return result
 }
+```
 
 ### bind 
+```
 Function.prototype.myBind = function (ctx, ...args) {
   const self = this
   const fn = function(){}
@@ -52,7 +57,7 @@ Function.prototype.myBind = function (ctx, ...args) {
   bind.prototype = new fn()
   return bind
 }
-
+```
 
 ### 防抖
 ```
