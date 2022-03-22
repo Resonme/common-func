@@ -31,14 +31,10 @@ Promise mutationObserver setMididate settimeout
 ### vuex
 
 
-### Webpack  
-原理
-
-### Loader
-
-### Plugin
-
-### babel
+### Webpack 
+Loader  
+Plugin  
+babel  
 
 ### 浏览器输入url执行过程  
 
