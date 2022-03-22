@@ -1,9 +1,9 @@
 
-### vue initUse
-If installedPlugins数组存在直接return
-If 如果有install并且是function执行install 
-Else if 是一个function 执行
-Push到installedPlugins数组
+### vue initUse  
+If installedPlugins数组存在直接return  
+If 如果有install并且是function执行install   
+Else if 是一个function 执行  
+Push到installedPlugins数组  
 
 ### initMixins
 mergeOptions(parent, child)
