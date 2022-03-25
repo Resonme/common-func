@@ -10,7 +10,7 @@ export function deepCopy(target, map = new Map()) {
         }
         map.set(target,obj) // 没有就存储拷贝记录
         for (let key in target) {
-            obj[key] = deepCopy(target[key]) // 递归
+            obj[key] = deepCopy(target[key], map) // 递归
         }
         return obj
     } else {
